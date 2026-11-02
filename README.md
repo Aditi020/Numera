@@ -1,34 +1,32 @@
 # Scientific & Advanced Calculator
 
-A desktop scientific calculator built with Python. Originally assigned as a basic calculator project, this application was extended into an analytical tool designed for students and data analysts.
-
-It features a custom dark-themed UI, algebraic equation solving, statistical data analysis, and an interactive graphing module.
+A desktop scientific and analytical calculator built with Python. Designed for students and data analysts, the application integrates advanced mathematical functions, statistical analysis, and interactive graphing into a single workspace with a custom dark theme.
 
 ## Features
 
 ### 1. Scientific & Advanced Modes
-- **Basic Math:** Safe evaluation of expressions, parentheses, powers, roots, and factorials.
-- **Trigonometry & Logs:** Sine, cosine, tangent, hyperbolic functions, and logarithms with custom base support. Supports both DEG and RAD modes.
-- **Variable Memory:** Type `a = 5` and press `=` to store variables, then use `a * 2` in your next calculation.
-- **Equation Solver:** An inline step-by-step menu. Press EQN, choose 1 (2-variable), 2 (quadratic), or 3 (cubic), and enter coefficients one by one directly on the main screen.
-- **Combinatorics:** Calculate Combinations (nCr) and Permutations (nPr).
-- **Fraction Mode:** Toggle the "S⇔D" button to convert decimals into exact fractions.
+- **Basic Math:** Evaluates expressions, parentheses, powers, roots, and factorials securely.
+- **Trigonometry & Logs:** Supports trigonometric functions and logarithms with custom bases, including Degree (DEG) and Radian (RAD) modes.
+- **Variable Memory:** Assign values (e.g., `a = 5`) for reuse in subsequent calculations.
+- **Equation Solver:** Features an inline step-by-step menu to solve 2-variable, quadratic, and cubic equations directly on the main screen.
+- **Combinatorics:** Calculates combinations (nCr) and permutations (nPr).
+- **Fraction Mode:** Toggles the "S⇔D" button to switch results between decimals and exact fractions.
 
 ### 2. Statistics Workspace
-- **Dataset Input:** Enter paired X and Y data one by one or comma-separated.
-- **Live Summary:** A dynamically updating dashboard shows Count, Mean, Median, and Standard Deviation instantly.
-- **Advanced Metrics:** Dedicated buttons for Quartiles (Q1, Q3), IQR, MAD, Variance, and Regression stats.
-- **Linear Regression:** Automatically calculates Correlation (r), Slope (m), and Y-Intercept (b) when X and Y lengths match.
+- **Dataset Input:** Accepts comma-separated or individual paired X and Y data points.
+- **Live Summary:** Automatically updates to display Count, Mean, Median, and Standard Deviation.
+- **Advanced Metrics:** Provides direct access to Quartiles (Q1, Q3), IQR, MAD, Variance, and Regression metrics.
+- **Linear Regression:** Calculates Correlation (r), Slope (m), and Y-Intercept (b) for matched datasets.
 
 ### 3. Interactive Graphing (Matplotlib)
-- **Embedded Canvas:** The graph lives inside the app, not in a separate window.
-- **Pan & Zoom:** Click and drag to pan; use the mouse wheel to zoom in and out.
+- **Embedded Canvas:** Renders graphs directly within the application interface.
+- **Navigation:** Supports mouse-wheel zooming and click-and-drag panning.
 - **Graph Types:**
   - **Linear Regression:** Scatter plot with a line of best fit.
-  - **Histogram:** Distribution of the X dataset.
-  - **Normal Curve:** Bell curve fit for the X dataset.
-  - **Poisson Distribution:** Probability mass function for count data.
-- **Summary Panel:** A panel below the graph shows the equation, R² value, and statistical parameters.
+  - **Histogram:** Displays the frequency distribution of the dataset.
+  - **Normal Curve:** Plots a bell curve based on the data.
+  - **Poisson Distribution:** Displays the probability mass function for count data.
+- **Summary Panel:** Displays relevant equations, R² values, and statistical parameters below the graph.
 
 ## Tech Stack & Architecture
 
