@@ -1,4 +1,4 @@
-# Calc — Scientific & Analytical Calculator
+# Scientific & Advanced Calculator
 
 A desktop scientific calculator built with Python. Originally assigned as a basic calculator project, this application was extended into an analytical tool designed for students and data analysts.
 
@@ -58,6 +58,7 @@ Advanced_Calculator/
 ├── .gitignore             # Files to exclude from Git tracking
 ├── LICENSE                # Open-source license
 └── README.md              # You are here
+```
 
 ## How to Run
 
@@ -65,15 +66,26 @@ Advanced_Calculator/
    ```bash
    git clone https://github.com/Aditi020/Advanced_Calculator.git
    cd Advanced_Calculator
+   ```
 2. Create and activate a virtual environment (recommended):
+   ```bash
    cd code
    python main.py
-   # Windows:
+   ```
+   ### Windows: 
+   ```bash
    venv\Scripts\activate
-   # macOS/Linux:
+   ````
+   ### macOS/Linux:
+   ``` bash
    source venv/bin/activate
+   ```
 3. Install the dependencies:
+   ```bash
    pip install -r requirements.txt
+   ```
 4. Run the application:
+   ```bash
    python main.py
+   ```
 

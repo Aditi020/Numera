@@ -87,8 +87,7 @@ class CalcApp(ctk.CTk):
             except ValueError:
                 self._update_result("Error: Enter 1, 2, or 3", scroll="end")
                 self.expr = ""
-                self._refresh_display()
-                return
+                return #
             
             self.expr = ""
             if choice == 1:
@@ -98,9 +97,8 @@ class CalcApp(ctk.CTk):
             elif choice == 3:
                 self._start_sequence("eqn_cubic", ["a", "b", "c", "d"], skeleton="ax³ + bx² + cx + d = 0")
             else:
-                self._update_result("Error: Invalid choice (1-3)", scroll="end")
+                self._update_result("Error: Invalid choice. Please enter 1, 2, or 3.", scroll="end")
                 self.expr = ""
-                self._refresh_display()
             return
 
         # Get the coefficient value

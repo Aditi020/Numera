@@ -129,7 +129,7 @@ def _build_ns(vars, angle):
     }
     
     if angle == "DEG":
-        nmspaceupdate({
+        nmspace.update({
             "sin": lambda x: math.sin(math.radians(x)),
             "cos": lambda x: math.cos(math.radians(x)),
             "tan": lambda x: safe_tan(x, "DEG"),
@@ -138,14 +138,14 @@ def _build_ns(vars, angle):
             "atan": lambda x: math.degrees(math.atan(x)),
         })
     else:
-        nmspaceupdate({"sin": math.sin, "cos": math.cos, 
+        nmspace.update({"sin": math.sin, "cos": math.cos, 
                    "tan": lambda x: safe_tan(x, "RAD"),
                    "asin": math.asin, "acos": math.acos, "atan": math.atan})
         
-    nmspaceupdate(vars)
-    return ns
+    nmspace.update(vars)
+    return nmspace
 
-def _safe_eval(s, ns):
+def _safe_eval(s, nmspace):
     """
     Uses AST to parse the string safely. Walks through every node 
     to make sure there is no malicious code.
@@ -158,19 +158,19 @@ def _safe_eval(s, ns):
     for node in ast.walk(tree):
         if not isinstance(node, _ALLOWED):
             raise ValueError(f"Not allowed: {type(node).__name__}")
-        if isinstance(node, ast.Name) and node.id not in ns:
+        if isinstance(node, ast.Name) and node.id not in nmspace:
             raise ValueError(f"Unknown name: {node.id}")
         if isinstance(node, ast.Call):
             if not isinstance(node.func, ast.Name):
                 raise ValueError("Only simple function calls allowed")
-            if node.func.id not in ns:
+            if node.func.id not in nmspace:
                 raise ValueError(f"Unknown function: {node.func.id}")
                 
     # Apply the safe power transformer
     tree = PowTransformer().visit(tree)
     ast.fix_missing_locations(tree)
                 
-    return eval(compile(tree, "<expr>", "eval"), {"__builtins__": {}}, ns)
+    return eval(compile(tree, "<expr>", "eval"), {"__builtins__": {}}, nmspace)
 
 def evaluate(s, vars=None, angle="DEG"):
     """
@@ -180,10 +180,10 @@ def evaluate(s, vars=None, angle="DEG"):
         raise ValueError("Empty expression")
         
     src = _preprocess(s)
-    ns  = _build_ns(vars or {}, angle)
+    nmspace  = _build_ns(vars or {}, angle)
     
     try:
-        return _safe_eval(src, ns)
+        return _safe_eval(src, nmspace)
     except ZeroDivisionError:
         raise ValueError("Division by zero")
     except OverflowError:
