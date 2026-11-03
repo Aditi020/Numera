@@ -7,7 +7,7 @@ A professional calculator look with dark casing,
 grey keys, and high-contrast orange operations.
 """
 
-# --- Palette (Classic Calculator) ---
+# --- Layout Color ---
 
 BG1        = "#202124"   # Main body (Dark Charcoal)
 BG2        = "#303238"   # Display screen (Dark Grey)
