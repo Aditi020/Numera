@@ -319,13 +319,21 @@ class CalcApp(ctk.CTk):
             if self.solver["type"] == "eqn_menu":
                 self.result_box.configure(font=("Consolas", 14, "bold"))
                 menu_text = "1. 2-Variable (x, y)\n2. Quadratic (x)\n3. Cubic (x)"
+                
+                # FIX: Insert the cursor at the correct position instead of just at the end
+                text = self.expr or " "
+                if 0 <= self.cursor_pos <= len(self.expr):
+                    text = text[:self.cursor_pos] + "|" + text[self.cursor_pos:]
+                
                 if self.expr == "":
-                    self._update_result(f"{menu_text}\n\n> {self.expr}|", scroll="1.0")
+                    self._update_result(f"{menu_text}\n\n> {text}", scroll="1.0")
                 else:
-                    self._update_result(f"{menu_text}\n\n> {self.expr}|", scroll="end")
+                    self._update_result(f"{menu_text}\n\n> {text}", scroll="end")
             else:
                 self.result_box.configure(font=("Consolas", 20, "bold"))
                 prompt = self.solver["prompts"][self.solver["step"]]
+                
+                # Same cursor logic for the variable prompts (a = ...)
                 text = self.expr or " "
                 if 0 <= self.cursor_pos <= len(self.expr):
                     text = text[:self.cursor_pos] + "|" + text[self.cursor_pos:]
@@ -333,6 +341,7 @@ class CalcApp(ctk.CTk):
                 self._update_result(f"{prompt} = {text}", scroll="end")
             return
 
+        # Normal calculator display logic
         self.result_box.configure(font=theme.FONT_RESULT)
         text = self.expr or " "
         if 0 <= self.cursor_pos <= len(self.expr):
