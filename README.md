@@ -59,31 +59,40 @@ Advanced_Calculator/
 ```
 
 ## How to Run
+1. Clone the repository and open the code folder:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Aditi020/Advanced_Calculator.git
-   cd Advanced_Calculator
-   ```
+```
+git clone https://github.com/Aditi020/Scientific_and_Advanced_Calculator.git
+cd Scientific_and_Advanced_Calculator/code
+```
+
 2. Create and activate a virtual environment (recommended):
-   ```bash
-   cd code
-   python main.py
-   ```
-   ### Windows: 
-   ```bash
-   venv\Scripts\activate
-   ````
-   ### macOS/Linux:
-   ``` bash
-   source venv/bin/activate
-   ```
+
+```
+python -m venv venv
+```
+
+Windows:
+
+```
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```
+source venv/bin/activate
+```
+
 3. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+
+```
+pip install -r requirements.txt
+```
+
 4. Run the application:
-   ```bash
-   python main.py
-   ```
+
+```
+python main.py
+```
 
