@@ -52,7 +52,7 @@ Numera/
 │   └── requirements.txt   # Python dependencies
 ├── docs/                  # Project documentation and presentation
 │   ├── Assignment.pdf     # Original assignment brief
-│   └── Numera.pptx    # Final presentation slides
+│   └── Numera.pptx        # Final presentation slides
 ├── .gitignore             # Files to exclude from Git tracking
 ├── LICENSE                # Open-source license
 └── README.md              # You are here
