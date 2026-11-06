@@ -1,5 +1,5 @@
 """
-Stats tab UI.
+Statistics tab UI.
 Takes datasets, calculates the metrics, and updates the summary card.
 """
 
