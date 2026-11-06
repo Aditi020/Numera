@@ -40,7 +40,7 @@ The project uses a modular architecture to separate the UI from the math engine:
 ### File Structure
 
 ```text
-Advanced_Calculator/
+Numera/
 ├── code/                  # All Python source files
 │   ├── main.py            # Entry point to run the app
 │   ├── theme.py           # Colors, fonts, and styling constants
@@ -62,8 +62,8 @@ Advanced_Calculator/
 1. Clone the repository and open the code folder:
 
 ```
-git clone https://github.com/Aditi020/Scientific_and_Advanced_Calculator.git
-cd Scientific_and_Advanced_Calculator/code
+git clone https://github.com/Aditi020/Numera.git
+cd Numera/code
 ```
 
 2. Create and activate a virtual environment (recommended):
