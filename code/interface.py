@@ -133,6 +133,14 @@ class CalcApp(ctk.CTk):
                     res = str(math.comb(int(w_data[0]), int(w_data[1])))
                 elif w_type == "npr":
                     res = str(math.perm(int(w_data[0]), int(w_data[1])))
+                elif w_type == "log_custom":
+                    # FIX: Calculate custom log (Value, Base)
+                    val = w_data[0]
+                    base = w_data[1]
+                    if val <= 0 or base <= 0 or base == 1:
+                        res = "Error: Invalid log values"
+                    else:
+                        res = f"{math.log(val, base):.10g}"
                 else:
                     res = "Error"
             except Exception as e:
@@ -366,8 +374,11 @@ class CalcApp(ctk.CTk):
     # --- Input Handling ---
     def _show_log_menu(self):
         menu = tk.Menu(self, tearoff=0, bg=theme.BG2, fg=theme.TEXT, font=MENU_FONT, activebackground=theme.BTN_OP, activeforeground=theme.TEXT)
+        # Log 10 still just inserts the function normally
         menu.add_command(label="log₁₀", command=lambda: self._press("log10", "log10()", 1))
-        menu.add_command(label="logₙ (custom)", command=lambda: self._press("log", "log(, )", 2))
+        # Custom log now triggers the inline solver
+        menu.add_command(label="logₙ (custom)", command=lambda: self._start_sequence("log_custom", ["Value", "Base"], skeleton="Custom Logarithm"))
+        
         try:
             x, y = self.winfo_pointerx(), self.winfo_pointery()
             menu.tk_popup(x, y)
