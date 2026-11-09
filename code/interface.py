@@ -198,7 +198,7 @@ class CalcApp(ctk.CTk):
         h = ctk.CTkFrame(self, fg_color=theme.BG1)
         h.pack(fill="x", padx=14, pady=(12, 0))
         ctk.CTkLabel(h, text="Numera", font=theme.FONT_TITLE, text_color=theme.TEXT).pack(side="left")
-        ctk.CTkLabel(h, text="SCIENTIFIC & ANALYTICAL", font=theme.FONT_SUBTITLE, text_color=theme.TEXT_MUTED).pack(side="left", padx=10, pady=(8, 0))
+        ctk.CTkLabel(h, text="SCIENTIFIC & ADVANCED", font=theme.FONT_SUBTITLE, text_color=theme.TEXT_MUTED).pack(side="left", padx=10, pady=(8, 0))
 
     def _build_mode_bar(self):
         bar = ctk.CTkFrame(self, fg_color=theme.BG1)

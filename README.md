@@ -1,6 +1,6 @@
 # NUMERA
 
-A desktop scientific and analytical calculator built with Python. Designed for students and data analysts, the application integrates advanced mathematical functions, statistical analysis, and interactive graphing into a single workspace with a custom dark theme.
+A desktop scientific and advanced calculator built with Python. Designed for students and data analysts, the application integrates advanced mathematical functions, statistical analysis, and interactive graphing into a single workspace with a custom dark theme.
 
 ## Features
 
